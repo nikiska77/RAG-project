@@ -1,7 +1,7 @@
 """
 Credit to Derek Thomas, derek@huggingface.co
 """
-
+import os
 import subprocess
 
 subprocess.run(["pip", "install", "--upgrade", "transformers[torch,sentencepiece]==4.34.1"])
@@ -19,14 +19,14 @@ from gradio_app.backend.semantic_search import table, retriever
 VECTOR_COLUMN_NAME = "docs"
 TEXT_COLUMN_NAME = "sum_docs"
 
-#proj_dir = Path(__file__).parent
-proj_dir = Path(__file__)
+proj_dir = Path(__file__).parent
+proj_dir = Path(proj_dir, 'gradio_app')
+print(proj_dir)
 # Setting up the logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
 # Set up the template environment with the templates directory
-env = Environment(loader=FileSystemLoader(proj_dir / '/gradio_app/templates'))
+env = Environment(loader=FileSystemLoader(proj_dir / 'templates'))
 
 # Load the templates directly from the environment
 template = env.get_template('template.j2')
