@@ -1,0 +1,103 @@
+
+🤗 Transformers Notebooks
+You can find here a list of the official notebooks provided by Hugging Face.
+Also, we would like to list here interesting content created by the community.
+If you wrote some notebook(s) leveraging 🤗 Transformers and would like to be listed here, please open a
+Pull Request so it can be included under the Community notebooks.
+Hugging Face's notebooks 🤗
+Documentation notebooks
+You can open any page of the documentation as a notebook in Colab (there is a button directly on said pages) but they are also listed here if you need them:
+| Notebook     |      Description      |   |   |
+|:----------|:-------------|:-------------|------:|
+| Quicktour of the library  | A presentation of the various APIs in Transformers || |
+| Summary of the tasks  | How to run the models of the Transformers library task by task || |
+| Preprocessing data  | How to use a tokenizer to preprocess your data || |
+| Fine-tuning a pretrained model  | How to use the Trainer to fine-tune a pretrained model || |
+| Summary of the tokenizers  | The differences between the tokenizers algorithm || |
+| Multilingual models  | How to use the multilingual models of the library || |
+PyTorch Examples
+Natural Language Processing[[pytorch-nlp]]
+| Notebook     |      Description      |   |   |
+|:----------|:-------------|:-------------|------:|
+| Train your tokenizer  | How to train and use your very own tokenizer  || |
+| Train your language model   | How to easily start using transformers  || |
+| How to fine-tune a model on text classification| Show how to preprocess the data and fine-tune a pretrained model on any GLUE task. | | |
+| How to fine-tune a model on language modeling| Show how to preprocess the data and fine-tune a pretrained model on a causal or masked LM task. | | |
+| How to fine-tune a model on token classification| Show how to preprocess the data and fine-tune a pretrained model on a token classification task (NER, PoS). | | |
+| How to fine-tune a model on question answering| Show how to preprocess the data and fine-tune a pretrained model on SQUAD. | | |
+| How to fine-tune a model on multiple choice| Show how to preprocess the data and fine-tune a pretrained model on SWAG. | | |
+| How to fine-tune a model on translation| Show how to preprocess the data and fine-tune a pretrained model on WMT. | | |
+| How to fine-tune a model on summarization| Show how to preprocess the data and fine-tune a pretrained model on XSUM. | | |
+| How to train a language model from scratch| Highlight all the steps to effectively train Transformer model on custom data | | |
+| How to generate text| How to use different decoding methods for language generation with transformers | | |
+| How to generate text (with constraints)| How to guide language generation with user-provided constraints | | |
+| Reformer| How Reformer pushes the limits of language modeling | | |
+Computer Vision[[pytorch-cv]]
+| Notebook                                                                                                                                                                   | Description                                                                                                            |                                                                                                                                                                                                            |   |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------:|
+| How to fine-tune a model on image classification (Torchvision)                   | Show how to preprocess the data using Torchvision and fine-tune any pretrained Vision model on Image Classification    |                  | |
+| How to fine-tune a model on image classification (Albumentations) | Show how to preprocess the data using Albumentations and fine-tune any pretrained Vision model on Image Classification |   | |
+| How to fine-tune a model on image classification (Kornia)                 | Show how to preprocess the data using Kornia and fine-tune any pretrained Vision model on Image Classification         |           | |
+| How to perform zero-shot object detection with OWL-ViT          | Show how to perform zero-shot object detection on images with text queries                                             | | |
+| How to fine-tune an image captioning model                                      | Show how to fine-tune BLIP for image captioning on a custom dataset                                                    |                 | |
+| How to build an image similarity system with Transformers                            | Show how to build an image similarity system                                                                           |                      | |
+| How to fine-tune a SegFormer model on semantic segmentation                     | Show how to preprocess the data and fine-tune a pretrained SegFormer model on Semantic Segmentation                    |                 | |
+| How to fine-tune a VideoMAE model on video classification          | Show how to preprocess the data and fine-tune a pretrained VideoMAE model on Video Classification                      |                 | |
+Audio[[pytorch-audio]]
+| Notebook     |      Description      |   |   |
+|:----------|:-------------|:-------------|------:|
+| How to fine-tune a speech recognition model in English| Show how to preprocess the data and fine-tune a pretrained Speech model on TIMIT | | |
+| How to fine-tune a speech recognition model in any language| Show how to preprocess the data and fine-tune a multi-lingually pretrained speech model on Common Voice | | |
+| How to fine-tune a model on audio classification| Show how to preprocess the data and fine-tune a pretrained Speech model on Keyword Spotting | | |
+Biological Sequences[[pytorch-bio]]
+| Notebook     | Description                                                                             |   |   |
+|:----------|:----------------------------------------------------------------------------------------|:-------------|------:|
+| How to fine-tune a pre-trained protein model | See how to tokenize proteins and fine-tune a large pre-trained protein "language" model |  |  |
+| How to generate protein folds | See how to go from protein sequence to a full protein model and PDB file                |  |  |
+| How to fine-tune a Nucleotide Transformer model | See how to tokenize DNA and fine-tune a large pre-trained DNA "language" model |  |  |
+| Fine-tune a Nucleotide Transformer model with LoRA | Train even larger DNA models in a memory-efficient way |  |  |
+Other modalities[[pytorch-other]]
+| Notebook     | Description                                                                             |   |   |
+|:----------|:----------------------------------------------------------------------------------------|:-------------|------:|
+| Probabilistic Time Series Forecasting | See how to train Time Series Transformer on a custom dataset                            |  |  |
+Utility notebooks[[pytorch-utility]]
+| Notebook     |      Description      |   |   |
+|:----------|:-------------|:-------------|------:|
+| How to export model to ONNX| Highlight how to export and run inference workloads through ONNX |
+| How to use Benchmarks| How to benchmark models with transformers | | |
+TensorFlow Examples
+Natural Language Processing[[tensorflow-nlp]]
+| Notebook     |      Description      |   |   |
+|:----------|:-------------|:-------------|------:|
+| Train your tokenizer  | How to train and use your very own tokenizer  || |
+| Train your language model   | How to easily start using transformers  || |
+| How to fine-tune a model on text classification| Show how to preprocess the data and fine-tune a pretrained model on any GLUE task. | | |
+| How to fine-tune a model on language modeling| Show how to preprocess the data and fine-tune a pretrained model on a causal or masked LM task. | | |
+| How to fine-tune a model on token classification| Show how to preprocess the data and fine-tune a pretrained model on a token classification task (NER, PoS). | | |
+| How to fine-tune a model on question answering| Show how to preprocess the data and fine-tune a pretrained model on SQUAD. | | |
+| How to fine-tune a model on multiple choice| Show how to preprocess the data and fine-tune a pretrained model on SWAG. | | |
+| How to fine-tune a model on translation| Show how to preprocess the data and fine-tune a pretrained model on WMT. | | |
+| How to fine-tune a model on summarization| Show how to preprocess the data and fine-tune a pretrained model on XSUM. | | |
+Computer Vision[[tensorflow-cv]]
+| Notebook                                                                                                                                                 | Description                                                                                         |   |   |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------|:-------------|------:|
+| How to fine-tune a model on image classification            | Show how to preprocess the data and fine-tune any pretrained Vision model on Image Classification   | | |
+| How to fine-tune a SegFormer model on semantic segmentation | Show how to preprocess the data and fine-tune a pretrained SegFormer model on Semantic Segmentation | | |
+Biological Sequences[[tensorflow-bio]]
+| Notebook     |      Description      |   |   |
+|:----------|:-------------|:-------------|------:|
+| How to fine-tune a pre-trained protein model | See how to tokenize proteins and fine-tune a large pre-trained protein "language" model |  |  |
+Utility notebooks[[tensorflow-utility]]
+| Notebook     |      Description      |   |                                                                                                                                                                                      |
+|:----------|:-------------|:-------------|------:|
+| How to train TF/Keras models on TPU | See how to train at high speed on Google's TPU hardware |  |  |
+Optimum notebooks
+🤗  Optimum is an extension of 🤗 Transformers, providing a set of performance optimization tools enabling maximum efficiency to train and run models on targeted hardwares.
+| Notebook     |      Description      |   |   |
+|:----------|:-------------|:-------------|------:|
+| How to quantize a model with ONNX Runtime for text classification| Show how to apply static and dynamic quantization on a model using ONNX Runtime for any GLUE task. | | |
+| How to quantize a model with Intel Neural Compressor for text classification| Show how to apply static, dynamic and aware training quantization on a model using Intel Neural Compressor (INC) for any GLUE task. | | |
+| How to fine-tune a model on text classification with ONNX Runtime| Show how to preprocess the data and fine-tune a model on any GLUE task using ONNX Runtime. | | |
+| How to fine-tune a model on summarization with ONNX Runtime| Show how to preprocess the data and fine-tune a model on XSUM using ONNX Runtime. | | |
+Community notebooks:
+More notebooks developed by the community are available here.
