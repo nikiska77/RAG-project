@@ -6,7 +6,7 @@ from sentence_transformers import SentenceTransformer, CrossEncoder
 
 EMB_MODEL_NAME = "all-mpnet-base-v2"
 CR_ENC_EMB_MODEL_NAME = 'cross-encoder/ms-marco-MiniLM-L-6-v2'
-DB_TABLE_NAME = "summar_docs"
+DB_TABLE_NAME = "summary_docs"
 
 
 # Setting up the logging

@@ -10,9 +10,9 @@ from sentence_transformers import SentenceTransformer
 
 
 EMB_MODEL_NAME = "all-mpnet-base-v2"
-DB_TABLE_NAME = "summar_docs"
-VECTOR_COLUMN_NAME = "docs"
-TEXT_COLUMN_NAME = "sum_docs"
+DB_TABLE_NAME = "summary_docs"
+VECTOR_COLUMN_NAME = "vec_docs"
+TEXT_COLUMN_NAME = "summary_docs"
 INPUT_DIR = "../docs_chunk"
 db = lancedb.connect("../gradio_app/.lancedb") # db location
 batch_size = 32
@@ -62,4 +62,4 @@ create ivf-pd index https://lancedb.github.io/lancedb/ann_indexes/
 with the size of the transformer docs, index is not really needed
 but we'll do it for demonstrational purposes
 '''
-tbl.create_index(num_partitions=256, num_sub_vectors=96, vector_column_name=VECTOR_COLUMN_NAME)
+#tbl.create_index(num_partitions=256, num_sub_vectors=96, vector_column_name=VECTOR_COLUMN_NAME)

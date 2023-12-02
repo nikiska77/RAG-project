@@ -16,8 +16,8 @@ from jinja2 import Environment, FileSystemLoader
 from gradio_app.backend.query_llm import generate_hf, generate_openai
 from gradio_app.backend.semantic_search import table, retriever
 
-VECTOR_COLUMN_NAME = "docs"
-TEXT_COLUMN_NAME = "sum_docs"
+VECTOR_COLUMN_NAME = "vec_docs"
+TEXT_COLUMN_NAME = "summary_docs"
 
 proj_dir = Path(__file__).parent
 proj_dir = Path(proj_dir, 'gradio_app')
@@ -56,6 +56,7 @@ def bot(history, api_kind):
     document_start = perf_counter()
 
     query_vec = retriever.encode(query)
+    #print(table.head())
     documents = table.search(query_vec, vector_column_name=VECTOR_COLUMN_NAME).limit(top_k_rank).to_list()
     documents = [doc[TEXT_COLUMN_NAME] for doc in documents]
     ###
