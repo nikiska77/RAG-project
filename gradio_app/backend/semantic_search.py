@@ -14,5 +14,6 @@ retriever = SentenceTransformer(EMB_MODEL_NAME)
 
 # db
 db_uri = os.path.join(Path(__file__).parents[1], ".lancedb")
+print(db_uri)
 db = lancedb.connect(db_uri)
 table = db.open_table(DB_TABLE_NAME)

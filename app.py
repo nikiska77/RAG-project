@@ -21,7 +21,6 @@ TEXT_COLUMN_NAME = "sum_docs"
 
 proj_dir = Path(__file__).parent
 proj_dir = Path(proj_dir, 'gradio_app')
-print(proj_dir)
 # Setting up the logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
