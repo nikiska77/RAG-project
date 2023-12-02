@@ -58,7 +58,9 @@ def bot(history, api_kind):
     query_vec = retriever.encode(query)
     documents = table.search(query_vec, vector_column_name=VECTOR_COLUMN_NAME).limit(top_k_rank).to_list()
     documents = [doc[TEXT_COLUMN_NAME] for doc in documents]
-
+    ###
+    ### Added cross-encoder part
+    ###
     document_time = perf_counter() - document_start
     logger.warning(f'Finished Retrieving documents in {round(document_time, 2)} seconds...')
 

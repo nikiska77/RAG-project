@@ -10,7 +10,7 @@ from sentence_transformers import SentenceTransformer
 
 
 EMB_MODEL_NAME = "all-mpnet-base-v2"
-DB_TABLE_NAME = ""
+DB_TABLE_NAME = "summar_docs"
 VECTOR_COLUMN_NAME = "docs"
 TEXT_COLUMN_NAME = "sum_docs"
 INPUT_DIR = "../docs_chunk"
