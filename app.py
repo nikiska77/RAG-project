@@ -14,7 +14,8 @@ import gradio as gr
 from jinja2 import Environment, FileSystemLoader
 
 from gradio_app.backend.query_llm import generate_hf, generate_openai
-from gradio_app.backend.semantic_search import table, retriever
+from gradio_app.backend.semantic_search import table, retriever, cross_encoder
+import torch
 
 VECTOR_COLUMN_NAME = "vec_docs"
 TEXT_COLUMN_NAME = "summary_docs"
@@ -56,18 +57,35 @@ def bot(history, api_kind):
     document_start = perf_counter()
 
     query_vec = retriever.encode(query)
-    #print(table.head())
     documents = table.search(query_vec, vector_column_name=VECTOR_COLUMN_NAME).limit(top_k_rank).to_list()
-    documents = [doc[TEXT_COLUMN_NAME] for doc in documents]
+
+    print('type(documents):', type(documents))
+    print(len(documents))
+    for item in documents:
+        print(item['_distance'])
+    print(documents)
+    #documents = [doc[TEXT_COLUMN_NAME] for doc in documents]
     ###
     ### Added cross-encoder part
+    cross_inp = [[query, doc[TEXT_COLUMN_NAME]] for doc in documents]
+    cross_scores = cross_encoder.predict(cross_inp)
+    for idx in range(len(cross_scores)):
+        documents[idx]['cross-score'] = cross_scores[idx]
+        print(' cross_scores[idx]',  cross_scores[idx])
+        print(documents[idx]['summary_docs'][:10])
+
+    documents = sorted(documents, key=lambda x: x['cross-score'], reverse=True)
+    cs_documents = [doc[TEXT_COLUMN_NAME] for doc in documents]
+    # print(cross_scores)
+    # top_results = torch.topk(cross_scores, k=top_k_rank)
+    # documents = [doc[idx] ]
     ###
     document_time = perf_counter() - document_start
     logger.warning(f'Finished Retrieving documents in {round(document_time, 2)} seconds...')
 
     # Create Prompt
-    prompt = template.render(documents=documents, query=query)
-    prompt_html = template_html.render(documents=documents, query=query)
+    prompt = template.render(documents=cs_documents, query=query)
+    prompt_html = template_html.render(documents=cs_documents, query=query)
 
     if api_kind == "HuggingFace":
         generate_fn = generate_hf
